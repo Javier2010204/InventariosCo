@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  phone: MyString
+  opening: 2019-02-08 10:59:39
+  closing: 2019-02-08 10:59:39
+  company: one
+
+two:
+  address: MyString
+  phone: MyString
+  opening: 2019-02-08 10:59:39
+  closing: 2019-02-08 10:59:39
+  company: two

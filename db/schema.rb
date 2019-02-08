@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_193411) do
+ActiveRecord::Schema.define(version: 2019_02_08_165939) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 2019_02_06_193411) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.string "address"
+    t.string "phone"
+    t.time "opening"
+    t.time "closing"
+    t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_stores_on_company_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -35,14 +46,14 @@ ActiveRecord::Schema.define(version: 2019_02_06_193411) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "rol_id"
-    t.integer "company_id"
+    t.integer "store_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["rol_id"], name: "index_users_on_rol_id"
+    t.index ["store_id"], name: "index_users_on_store_id"
   end
 
 end

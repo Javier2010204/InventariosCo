@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :stores
   devise_for :users
 
   authenticated :user do
     root 'home#index'
     resources :rols
     resources :companies
+    resources :usuarios, as: :users
   end
 
   unauthenticated :user do
