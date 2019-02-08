@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
-  resources :companies
   devise_for :users
-  get 'home/index'
-  resources :rols
+
+  authenticated :user do
+    root 'home#index'
+    resources :rols
+    resources :companies
+  end
+
+  unauthenticated :user do
+  	devise_scope :user do
+  		root 'home#unregistered', as: :unregistered_root
+  	end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

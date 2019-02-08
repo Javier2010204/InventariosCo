@@ -35,8 +35,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.references :company, foreign_key: true
       t.string :name
       
-      
-
       t.timestamps null: false
     end
 
