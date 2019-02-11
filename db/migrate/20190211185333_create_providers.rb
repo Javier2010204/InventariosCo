@@ -7,7 +7,7 @@ class CreateProviders < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :manager
       t.text :comment
-
+      
       t.timestamps
     end
   end
