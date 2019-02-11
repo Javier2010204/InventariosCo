@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :sub_categories
+  resources :categories
+  resources :brands
+  resources :units
+  resources :providers
   resources :stores
   devise_for :users
 
