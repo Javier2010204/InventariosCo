@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_02_08_165939) do
   end
 
   create_table "stores", force: :cascade do |t|
+    t.string "name"
     t.string "address"
     t.string "phone"
     t.time "opening"
@@ -45,8 +46,8 @@ ActiveRecord::Schema.define(version: 2019_02_08_165939) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "rol_id"
-    t.integer "store_id"
+    t.integer "rol_id", default: 1
+    t.integer "store_id", default: 1
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
