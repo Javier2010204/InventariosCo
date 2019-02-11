@@ -3,7 +3,8 @@ $colors:(
     light-blue: #74E0D4,
     light-grey: #F3FBFF,
     orange: #FA9028,
-    red: #FF0044
+    red: #FF0044,
+    white: #fff
 );
 
 @each $color-name, $color in $colors{
