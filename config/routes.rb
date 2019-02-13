@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :stores
   devise_for :users
 
+  get '/brands_suggestion', to: 'brands_suggestion#index'
+  get '/validate_suggested_brand', to: 'validate_suggested_brand#index'
+
   authenticated :user do
     root 'home#index'
     resources :rols

@@ -1,6 +1,7 @@
 {
   "name": "dsl-generated-dependencies",
   "dependencies": {
-    "material-design-lite": "latest"
+    "material-design-lite": "latest",
+    "typeahead.js": "latest"
   }
 }

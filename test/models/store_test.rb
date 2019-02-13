@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: stores
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  address    :string
+#  phone      :string
+#  opening    :time
+#  closing    :time
+#  company_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'test_helper'
 
 class StoreTest < ActiveSupport::TestCase
