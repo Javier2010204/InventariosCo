@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  price_sale: 9.99
+  price_cost: 9.99
+  price_offer: 9.99
+  state: MyString
+  offer: MyString
+  stock: 1
+  min_stock: 1
+  unit: one
+  bar_code: 1
+  serial_number: MyString
+  brand: one
+  sub_category: one
+  provider: one
+
+two:
+  name: MyString
+  description: MyText
+  price_sale: 9.99
+  price_cost: 9.99
+  price_offer: 9.99
+  state: MyString
+  offer: MyString
+  stock: 1
+  min_stock: 1
+  unit: two
+  bar_code: 1
+  serial_number: MyString
+  brand: two
+  sub_category: two
+  provider: two
