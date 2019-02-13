@@ -8,6 +8,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.decimal :price_offer
       t.string :state
       t.string :offer
+      t.date :expiration_date
       t.integer :stock
       t.integer :min_stock
       t.references :unit, foreign_key: true

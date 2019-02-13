@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_02_13_000412) do
     t.decimal "price_offer"
     t.string "state"
     t.string "offer"
+    t.date "expiration_date"
     t.integer "stock"
     t.integer "min_stock"
     t.integer "unit_id"

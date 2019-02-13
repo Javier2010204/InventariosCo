@@ -1,5 +1,6 @@
 class SubCategoriesController < ApplicationController
   before_action :set_sub_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:new, :edit]
 
   # GET /sub_categories
   # GET /sub_categories.json
@@ -70,5 +71,9 @@ class SubCategoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def sub_category_params
       params.require(:sub_category).permit(:name, :description, :category_id)
+    end
+
+    def set_category
+      @category = Category.all.order(:name)
     end
 end
