@@ -4,9 +4,25 @@ html,body{
     background-color: #D8E2E8;
 }
 
+.text-center{
+    text-align: center;
+}
+
 .no-margin{
     margin: 0;
 }
+
+.top-space{
+    margin-top: 1em;
+}
+
 .no-decoration{
     text-decoration: none;
+}
+
+.btn-floating{
+    position: fixed;
+	bottom: 2em;
+	right: 2em;
+	z-index: 100;
 }

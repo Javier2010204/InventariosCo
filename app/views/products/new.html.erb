@@ -1,5 +1,11 @@
-<h1>New Product</h1>
+<div class="row center-xs">
+    <div class="col-xs-12 col-lg-10 white mdl-shadow--2dp">
+        <div class="box">
+            <h1>Agregar Producto</h1>
+            <%= render 'form', product: @product %>
+            <%= link_to 'regresar al listado', products_path %>
+        </div>
+    </div>
+</div>
 
-<%= render 'form', product: @product %>
 
-<%= link_to 'Back', products_path %>
