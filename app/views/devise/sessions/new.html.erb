@@ -1,12 +1,25 @@
+<div class="full-height row middle-xs white-text center-xs main-backgroun no-margin">
+  <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
+    <div class="box">
+      <div class="red white-text">
+        <h2>Iniciar sesion</h2>
+      </div>
+      <div class="big-padding dark-blue white-text">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>

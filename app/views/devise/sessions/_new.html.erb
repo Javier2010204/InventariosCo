@@ -1,17 +1,17 @@
-<h2>Log in</h2>
+<h2>Inicio de sesion</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mdl-textfield__input" %>
+    <%= f.label 'correo electronico', class: 'mdl-textfield__label'%><br />
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.password_field :password, autocomplete: "current-password", class: 'mdl-textfield__input' %>
+    <%= f.label :password, class: 'mdl-textfield__label' %><br />
   </div>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Enviar", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
   </div>
 <% end %>
