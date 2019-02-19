@@ -1,24 +1,34 @@
-<table class="full-width no-border mdl-shadow--2dp mdl-data-table mdl-js-data-table top-space">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numerical">Nombre</th>
-      <th class="mdl-data-table__cell--non-numerical">Precio de venta</th>
-      <th class="mdl-data-table__cell--non-numerical">Precio de compra</th>
-      <th class="mdl-data-table__cell--non-numerical">Cantidad en stock</th>
-      <th class="mdl-data-table__cell--non-numerical">Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.price_sale %></td>
-        <td><%= product.price_cost %></td>
-        <td><%= product.stock %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row top-space center-xs white mdl-shadow--2dp">
+  <div class="col-xs-12 col-md-10">
+    <div class="box">
+      <div>
+        <i class="material-icons">add</i>
+      </div>
+      <h2 class="-font medium-font pacifico-font text-left">Mis Productos</h2>
+      <table class="full-width no-border mdl-data-table mdl-js-data-table top-space">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numerical">Nombre</th>
+            <th class="mdl-data-table__cell--non-numerical">Precio de venta</th>
+            <th class="mdl-data-table__cell--non-numerical">Precio de compra</th>
+            <th class="mdl-data-table__cell--non-numerical">Cantidad en stock</th>
+            <th class="mdl-data-table__cell--non-numerical">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= product.price_sale %></td>
+              <td><%= product.price_cost %></td>
+              <td><%= product.stock %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>   
+    </div>
+  </div>
+</div>
 <div class="btn-floating">
   <%= button_to new_product_url(), method: :get, class: "mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect" do %>
     <i class="material-icons">add</i>
