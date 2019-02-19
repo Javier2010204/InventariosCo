@@ -2,10 +2,10 @@
   <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
     <div class="box">
       <div class="big-padding dark-blue white-text relative">
-        <div class="red white-text absolute mdl-shadow--2dp" style="padding:6px 3px;top:-20px;">
-          <h2>Iniciar sesion</h2>
-        </div>
         <div>
+          <div class="red white-text absolute mdl-shadow--2dp" style="position:relative; top:-55px; padding:10px;">
+            <h2>Iniciar sesion</h2>
+          </div>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'mdl-textfield__input' %>
