@@ -66,20 +66,10 @@
     <%= form.text_field :serial_number %>
   </div>
 
-  <div class="">
-          <div class="">
-            <%= form.label :brand_id, "Marca" %>
-          </div>
-          <div class="">
-            <%= form.text_field :brand, placeholder: "Marca", class: "form-control" %>
-          </div>
-          <div style="display: none">
-            <%= form.text_field :brand_id %>
-          </div>
-          <div style="display: none">
-            <%= form.text_field :brand_name %>
-          </div>
-        </div>
+  <div class="field">
+    <%= form.label :brand_id %>
+    <%= form.collection_select :brand_id, @brand,:id,:name, include_blank: true %>
+  </div>
 
   <div class="field">
     <%= form.label :unit_id %>
