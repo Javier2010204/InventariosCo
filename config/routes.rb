@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :inventories
   resources :products
   resources :sub_categories
   resources :categories
