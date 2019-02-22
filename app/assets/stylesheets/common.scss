@@ -90,3 +90,13 @@ html,body{
 	right: 2em;
 	z-index: 100;
 }
+
+.card-floating{
+    position: relative;
+    float: left;
+    padding: 10px;
+    background-color: rgb(255,64,129);
+    color: white;
+    top: -40px;
+    border-radius: 5px;
+}
