@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_185857) do
     t.integer "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "company_id"
+    t.bigint "company_id", default: 1
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["company_id"], name: "index_products_on_company_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"
