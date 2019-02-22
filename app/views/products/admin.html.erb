@@ -7,16 +7,65 @@
 					<%=link_to product_path(id: @product.id, client: true), class: 'mdl-button mdl-js-button white-text' do %>
 						<i class="material-icons margin-right">face</i><span>Ver como cliente</span>
 					<%end%>
-					<%=link_to product_path(id: @product.id, client: true), class: 'mdl-button mdl-js-button white-text' do %>
+					<%=link_to edit_product_path(), class: 'mdl-button mdl-js-button white-text' do %>
 						<i class="material-icons margin-right">create</i><span>Editar</span>
 					<%end%>
 					<%=link_to product_path(id: @product.id, client: true), class: 'mdl-button mdl-js-button white-text' do %>
 						<i class="material-icons margin-right">delete_forever</i><span>Eliminar</span>
 					<%end%>
-					<h1 class="no-margin medium-font text-left"><%=@product.price_sale%></h1>
             	</div>
-            	<div>
-            		
+            	<div class="row center-xs">
+            		<div class="col-xs-12 col-sm-6">
+            			<div class="box">
+            				<div class="demo-list-action mdl-list">
+								<div class="mdl-list__item">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons mdl-list__item-avatar">person</i>
+										<span>Total de ventas</span>
+									</span>
+									<span class="mdl-list__item-secondary-content">
+										<p>Q500000</p>
+									</span>
+								</div>
+								<div class="mdl-list__item">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons mdl-list__item-avatar">person</i>
+										<span>Precio de ventas</span>
+									</span>
+									<span class="mdl-list__item-secondary-content">
+										<p><%= @product.price_sale%></p>
+									</span>
+								</div>
+								<div class="mdl-list__item">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons mdl-list__item-avatar">person</i>
+										<span>Precio de compra</span>
+									</span>
+									<span class="mdl-list__item-secondary-content">
+										<p><%= @product.price_cost%></p>
+									</span>
+								</div>
+								<div class="mdl-list__item">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons mdl-list__item-avatar">person</i>
+										<span>Cantidad disponible Stock</span>
+									</span>
+									<span class="mdl-list__item-secondary-content">
+										<p><%= @product.stock %></p>
+									</span>
+								</div>
+								<div class="mdl-list__item">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons mdl-list__item-avatar">person</i>
+										<span>Proveedor</span>
+									</span>
+									<span class="mdl-list__item-secondary-content">
+										<p><%= @product.provider.name %></p>
+									</span>
+								</div>
+							</div>
+            			</div>
+            		</div>
             	</div>
 			</div>
 		</div>
