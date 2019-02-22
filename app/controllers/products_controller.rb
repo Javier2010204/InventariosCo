@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    if user_signed_in? && current_user.store.company.id == @product.company.id && !params.has_key?(:client)
+      render :admin
+    end
   end
 
   # GET /products/new

@@ -1,10 +1,14 @@
-<div class="row center-xs">
-    <div class="col-xs-12 col-lg-10 white mdl-shadow--2dp">
+<div class="row center-xs middle-xs full-height">
+    <div class="col-xs-12 col-lg-8 white mdl-shadow--2dp circle-border">
         <div class="box">
-            <h1>Agregar Producto</h1>
+        	<div class="card-floating">
+        		<i class="material-icons">note_add</i>
+        	</div>
+        	<div>
+        		<h1 class="medium-font pacifico-font text-left">Agregar Producto</h1>
+        	</div>
             <%= render 'form', product: @product %>
             <%= link_to 'regresar al listado', products_path %>
-            <%= @company %>
         </div>
     </div>
 </div>

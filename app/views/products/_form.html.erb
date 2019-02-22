@@ -11,82 +11,62 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
+    <%= form.label 'Nombre del producto', class: 'mdl-textfield__label' %>
+    <%= form.text_field :name, class: 'mdl-textfield__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
+    <%= form.label 'Descripción', class: 'mdl-textfield__label' %>
+    <%= form.text_area :description, class: 'mdl-textfield__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :price_sale %>
-    <%= form.text_field :price_sale %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
+    <%= form.label 'Precio de venta', class: 'mdl-textfield__label' %>
+    <%= form.number_field :price_sale, class: 'mdl-textfield__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :price_cost %>
-    <%= form.text_field :price_cost %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
+    <%= form.label 'Precio de compra', class: 'mdl-textfield__label' %>
+    <%= form.number_field :price_cost, class: 'mdl-textfield__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :price_offer %>
-    <%= form.text_field :price_offer %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
+    <%= form.label 'Precio de oferta (opcional)', class: 'mdl-textfield__label' %>
+    <%= form.number_field :price_offer, class: 'mdl-textfield__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
+    <%= form.label 'Cantidad en Stock', class: 'mdl-textfield__label' %>
+    <%= form.number_field :stock, class: 'mdl-textfield__input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :offer %>
-    <%= form.text_field :offer %>
-  </div>
-
-  <div class="field">
-    <%= form.label :stock %>
-    <%= form.number_field :stock %>
-  </div>
-
-  <div class="field">
-    <%= form.label :min_stock %>
-    <%= form.number_field :min_stock %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bar_code %>
-    <%= form.number_field :bar_code %>
-  </div>
-
-  <div class="field">
-    <%= form.label :serial_number %>
-    <%= form.text_field :serial_number %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
+    <%= form.label 'Cantidad minima en stock', class: 'mdl-textfield__label' %>
+    <%= form.number_field :min_stock, class: 'mdl-textfield__input' %>
   </div>
 
   <div class="field">
     <%= form.label :brand_id %>
-    <%= form.collection_select :brand_id, @brand,:id,:name, include_blank: true %>
+    <%= form.collection_select :brand_id, @brand,:id,:name, include_blank: false %>
   </div>
 
   <div class="field">
     <%= form.label :unit_id %>
-    <%= form.collection_select :unit_id, @unit,:id,:title, include_blank: true %>
+    <%= form.collection_select :unit_id, @unit,:id,:title, include_blank: false %>
   </div>
 
   <div class="field">
     <%= form.label :sub_category_id %>
-    <%= form.collection_select :sub_category_id, @sub_category,:id,:name, include_blank: true %>
+    <%= form.collection_select :sub_category_id, @sub_category,:id,:name, include_blank: false %>
   </div>
 
   <div class="field">
     <%= form.label :provider_id %>
-    <%= form.collection_select :provider_id, @provider,:id,:name, include_blank: true %>
+    <%= form.collection_select :provider_id, @provider,:id,:name, include_blank: false %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="text-left container">
+    <%= form.submit 'Guardar', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' %>
   </div>
 <% end %>
