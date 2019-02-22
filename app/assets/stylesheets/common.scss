@@ -32,6 +32,10 @@ html,body{
 }
 
 
+.margin-right{
+    margin-right: 5px;
+}
+
 
 .big-padding{
     padding: 50px 15px;
@@ -107,5 +111,12 @@ html,body{
 
 .container{
     width: 90%;
+}
+
+.login-card{
+    position: relative;
+    top: -90px; 
+    padding: 10px; 
+    border-radius: 5px;
 }
 

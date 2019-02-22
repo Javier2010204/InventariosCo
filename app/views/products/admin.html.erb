@@ -1,4 +1,29 @@
-<h1>Panel de administrador de producto</h1>
+<div class="row center-xs full-height middle-xs">
+	<div class="col-xs-12 col-lg-8 mdl-shadow--2dp white circle-border">
+		<div class="box">
+			<div class="big-padding white" style="border-radius: 5px;">
+				<div class="white-text green absolute mdl-shadow--2dp login-card" style="">
+					<h1 class="no-margin medium-font text-left"><%=@product.name%></h1>
+					<%=link_to product_path(id: @product.id, client: true), class: 'mdl-button mdl-js-button white-text' do %>
+						<i class="material-icons margin-right">face</i><span>Ver como cliente</span>
+					<%end%>
+					<%=link_to product_path(id: @product.id, client: true), class: 'mdl-button mdl-js-button white-text' do %>
+						<i class="material-icons margin-right">create</i><span>Editar</span>
+					<%end%>
+					<%=link_to product_path(id: @product.id, client: true), class: 'mdl-button mdl-js-button white-text' do %>
+						<i class="material-icons margin-right">delete_forever</i><span>Eliminar</span>
+					<%end%>
+					<h1 class="no-margin medium-font text-left"><%=@product.price_sale%></h1>
+            	</div>
+            	<div>
+            		
+            	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 <%=link_to "Ver como cliente", product_path(id: @product.id, client: true), class: 'no-decoration'%>
 
 <%= current_user.store.company.id %>
