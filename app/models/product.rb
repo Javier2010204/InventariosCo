@@ -24,10 +24,31 @@
 #
 
 class Product < ApplicationRecord
+
+  include AASM
+
   belongs_to :unit
   belongs_to :brand
   belongs_to :sub_category
   belongs_to :provider
+  belongs_to :company
+
+  validates :name, presence: true
+  validates :price_sale, presence: true
+  validates :price_cost, presence: true
+  validates :stock, presence: true
+  validates :min_stock, presence: true
+
+  aasm column: "state" do
+    state :available, initial: true
+    state :sold
+
+    event :exhausted do
+      transitions from: [:available], to: [:sold]
+    end
+  end
+
+  #pendiente de hacer la parte de ofertas
 
 
   def product_description

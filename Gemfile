@@ -34,6 +34,7 @@ gem 'paperclip'
 gem 'bower-rails'
 gem 'jquery-rails'
 gem 'annotate'
+gem 'aasm'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
