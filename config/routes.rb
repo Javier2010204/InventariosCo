@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :units
   resources :providers
   resources :stores
+  resources :attachments, only:[:show, :new, :create, :destroy]
   devise_for :users
 
   get '/brands_suggestion', to: 'brands_suggestion#index'

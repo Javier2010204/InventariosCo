@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_223353) do
+ActiveRecord::Schema.define(version: 2019_02_25_233536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.bigint "product_id"
+    t.string "archivo_file_name"
+    t.string "archivo_content_type"
+    t.bigint "archivo_file_size"
+    t.datetime "archivo_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_attachments_on_product_id"
+  end
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
@@ -145,6 +156,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_223353) do
     t.index ["store_id"], name: "index_users_on_store_id"
   end
 
+  add_foreign_key "attachments", "products"
   add_foreign_key "inventories", "products"
   add_foreign_key "inventories", "stores"
   add_foreign_key "products", "brands"
