@@ -59,12 +59,16 @@ ActiveRecord::Schema.define(version: 2019_02_21_185857) do
     t.date "expiration_date"
     t.integer "stock"
     t.integer "min_stock"
-    t.integer "unit_id"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.bigint "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.bigint "unit_id"
     t.integer "bar_code"
     t.string "serial_number"
-    t.integer "brand_id"
-    t.integer "sub_category_id"
-    t.integer "provider_id"
+    t.bigint "brand_id"
+    t.bigint "sub_category_id"
+    t.bigint "provider_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "company_id", default: 1
@@ -141,4 +145,8 @@ ActiveRecord::Schema.define(version: 2019_02_21_185857) do
 
   add_foreign_key "inventories", "products"
   add_foreign_key "inventories", "stores"
+  add_foreign_key "products", "brands"
+  add_foreign_key "products", "providers"
+  add_foreign_key "products", "sub_categories"
+  add_foreign_key "products", "units"
 end

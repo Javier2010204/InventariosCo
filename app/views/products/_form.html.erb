@@ -46,6 +46,11 @@
     <%= form.number_field :min_stock, class: 'mdl-textfield__input' %>
   </div>
 
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
+    <%= form.label 'Imagen de producto', class: 'mdl-textfield__label' %>
+    <%= form.file_field :avatar, class: 'mdl-textfield__input' %>
+  </div>
+
   <div class="field">
     <%= form.label :brand_id %>
     <%= form.collection_select :brand_id, @brand,:id,:name, include_blank: false %>

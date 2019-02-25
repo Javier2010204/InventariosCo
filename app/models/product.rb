@@ -39,6 +39,9 @@ class Product < ApplicationRecord
   validates :stock, presence: true
   validates :min_stock, presence: true
 
+  has_attached_file :avatar, styles: {medium:"300x300", thumb:"100x100"}, default_url: "default_product.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
   aasm column: "state" do
     state :available, initial: true
     state :sold

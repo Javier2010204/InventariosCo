@@ -2,4 +2,7 @@
 <p><%= @product.name %></p>
 <p><%= @product.price_sale %></p>
 <p><%= @product.description %></p>
+<div class="image-container">
+	<%=image_tag @product.avatar.url%>
+</div>
 <p><%=link_to @product.company.name, @product.company %></p>

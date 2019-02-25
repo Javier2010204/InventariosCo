@@ -6,7 +6,8 @@ $colors:(
     red: #FF0044,
     rose: #FF407E,
     green: #009688,
-    white: #fff
+    white: #fff,
+    black: #000
 );
 
 @each $color-name, $color in $colors{

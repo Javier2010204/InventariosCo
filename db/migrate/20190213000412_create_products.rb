@@ -11,6 +11,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.date :expiration_date
       t.integer :stock
       t.integer :min_stock
+      t.attachment :avatar
       t.references :unit, foreign_key: true
       t.integer :bar_code
       t.string :serial_number
