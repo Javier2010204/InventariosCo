@@ -3,7 +3,7 @@
     <div class="box">
       <div class="big-padding dark-blue white-text relative">
         <div>
-          <div class="red white-text absolute mdl-shadow--2dp" style="position:relative; top:-90px; padding:10px;">
+          <div class="rose white-text absolute mdl-shadow--2dp" style="position:relative; top:-90px; padding:10px;">
             <h2 class="no-margin big-font pacifico-font">Iniciar Sesión</h2>
             <p>Control total de tu negocio y comunicación con tus clientes</p>
           </div>
@@ -18,6 +18,10 @@
               <%= f.label :password, class: 'mdl-textfield__label' %>
             </div>
 
+
+            <div class="actions">
+              <%= f.submit "Ingresar", class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect' %>
+            </div>
             <% if devise_mapping.rememberable? -%>
               <label for="chkbox1" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
                 <input type="checkbox" id="chkbox1" class="mdl-checkbox__input">
@@ -25,10 +29,6 @@
               </label>
 
             <% end -%>
-
-            <div class="actions">
-              <%= f.submit "Ingresar", class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect' %>
-            </div>
           <% end %>
 
           <%= render "devise/shared/links" %>

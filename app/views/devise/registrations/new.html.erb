@@ -1,29 +1,40 @@
-<h2>Sign up</h2>
+<div class="full-height row middle-xs white-text center-xs main-backgroun no-margin">
+  <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4">
+    <div class="box">
+      <div class="big-padding dark-blue white-text relative">
+        <div>
+          <div class="rose white-text absolute mdl-shadow--2dp" style="position:relative; top:-90px; padding:10px;">
+            <h2 class="no-margin big-font pacifico-font">Crear Cuenta</h2>
+            <p>Control total de tu negocio y comunicación con tus clientes</p>
+          </div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <%= f.label :email, class: 'mdl-textfield__label' %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'mdl-textfield__input' %>
+            </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <%= f.label :password, class: 'mdl-textfield__label' %>
+              <% if @minimum_password_length %>
+              <span class="mdl-textfield__label red-text">(<%= @minimum_password_length %> characters minimum)</span>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: 'mdl-textfield__input' %>
+            </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <%= f.label :password_confirmation, class: 'mdl-textfield__label' %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'mdl-textfield__input' %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Registrarme", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+            </div>
+          <% end %>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
