@@ -1,23 +1,41 @@
-<div class="row center-xs">
+<div class="row center-xs top-space">
 	<div class="col-xs-12 col-sm-8">
 		<div class="box mdl-shadow--2dp white">
-			<div class="col-xs-6 col-sm-3 no-padding">
-				<div class="image-container">
-					<%=image_tag @product.avatar.url%>
+			<div class="row">
+				<div class="col-xs-6 col-sm-5 no-padding">
+					<div class="box">
+						<div class="image-container">
+							<%=image_tag @product.avatar.url%>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col-xs-5 col-sm-9">
-				<p><%= @product.name %></p>
-				<p><%= @product.price_sale %></p>
-				<p><%=link_to @product.company.name, @product.company %></p>
-			</div>
+				<div class="col-xs col-sm-1">
+					
+				</div>
+				<div class="col-xs-5 col-sm-6">
+					<div class="box text-justify">
+						<h1 class="big-font"><%= @product.name %></h1>
+						<p class="big-font bold-font">Q.<%= @product.price_sale %></p>
+						<h2 class="medium-font"><%=link_to @product.company.name, @product.company %></h2>
+						<p></p>
+						<%=link_to 'Pedir información', root_path(), class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'%>
+					</div>
+				</div>
 			<div class="row center-xs">
 				<div class="col-xs-10">
 					<div class="box">
 						<p><%= @product.description %></p>
 					</div>
 				</div>
+			</div>
+			</div>
 		</div>
+	</div>
+</div>
+<div class="row center-xs top-space">
+	<div class="col-xs-12 col-sm-8">
+		<div class="box mdl-shadow--2dp white">
+			Imagenes del producto
 		</div>
 	</div>
 </div>
