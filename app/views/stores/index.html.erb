@@ -4,41 +4,35 @@
       <div class="card-floating">
         <i class="material-icons text-left">assignment</i>
       </div>
-      <h1>Mis sucursales</h1>
-      <div class="row top-space center-xs">
-        <div class="col-xs-12 col-lg-7">
-          <div class="box">
-          <table class="mdl-data-table mdl-js-data-table border-top">
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Direccion</th>
-                <th>Telefono</th>
-                <th>Apertura</th>
-                <th>Cierre</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @stores.each do |store| %>
-                <tr>
-                  <td><%= store.name %></td>
-                  <td><%= store.address %></td>
-                  <td><%= store.phone %></td>
-                  <td><%= store.opening %></td>
-                  <td><%= store.closing %></td>
-                  <td>
-                    <%= link_to 'ver', store %>
-                    <%= link_to 'editar', edit_store_path(store) %>
-                    <%= link_to 'eliminar', store, method: :delete, data: {confirm: 'esta seguro que desea eliminar?'}%>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-          </div>
-        </div>
+      <div class="">
+        <h2 class="medium-font pacifico-font text-left">Mis Sucursales</h2>
       </div>
+      <table class="full-width no-border mdl-data-table mdl-js-data-table top-space">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numerical">Nombre</th>
+            <th class="mdl-data-table__cell--non-numerical">Dirección</th>
+            <th class="mdl-data-table__cell--non-numerical">Telefono</th>
+            <th class="mdl-data-table__cell--non-numerical">Hora de apertura</th>
+            <th class="mdl-data-table__cell--non-numerical">Hora de cierre</th>
+            <th class="mdl-data-table__cell--non-numerical">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @stores.each do |store| %>
+            <tr>
+              <td><%=link_to store.name, store, class: 'no-decoration' %></td>
+              <td><%= store.address %></td>
+              <td><%= store.phone %></td>
+              <td><%= store.opening %></td>
+              <td><%= store.closing %></td>
+              <td>
+                
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
