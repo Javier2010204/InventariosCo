@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  resources :inventories
+  
   resources :products
   resources :sub_categories
   resources :categories
   resources :brands
-  resources :units
-  resources :providers
-  resources :stores
-  resources :attachments, only:[:show, :new, :create, :destroy]
   devise_for :users
 
   get '/brands_suggestion', to: 'brands_suggestion#index'
@@ -17,7 +13,12 @@ Rails.application.routes.draw do
     root 'home#index'
     resources :rols
     resources :companies
+    resources :inventories
     resources :usuarios, as: :users
+    resources :units
+    resources :stores
+    resources :providers
+    resources :attachments, only:[:show, :new, :create, :destroy]
   end
 
   unauthenticated :user do
