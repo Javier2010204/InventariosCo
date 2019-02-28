@@ -13,17 +13,22 @@
 
   <div class="field">
     <%= form.label :store_id %>
-    <%= form.text_field :store_id %>
+    <%= form.collection_select :store_id, @store,:id,:name, include_blank: false %>
   </div>
 
   <div class="field">
     <%= form.label :product_id %>
-    <%= form.text_field :product_id %>
+    <%= form.collection_select :product_id, @product,:id,:name, include_blank: false %>
   </div>
 
   <div class="field">
     <%= form.label :stock %>
     <%= form.number_field :stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_stock %>
+    <%= form.number_field :min_stock %>
   </div>
 
   <div class="actions">

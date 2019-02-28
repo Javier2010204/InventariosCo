@@ -1,5 +1,6 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :edit, :update, :destroy]
+  before_action :set_combo_values, only:[:new, :edit]
 
   # GET /inventories
   # GET /inventories.json
@@ -62,6 +63,11 @@ class InventoriesController < ApplicationController
   end
 
   private
+
+    def set_combo_values
+      @store = Store.all.order(:name)
+      @product = Product.all.order(:name)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_inventory
       @inventory = Inventory.find(params[:id])
@@ -69,6 +75,6 @@ class InventoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventory_params
-      params.require(:inventory).permit(:store_id, :product_id, :stock)
+      params.require(:inventory).permit(:store_id, :product_id, :stock, :min_stock)
     end
 end
