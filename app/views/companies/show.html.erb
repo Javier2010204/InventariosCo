@@ -1,8 +1,8 @@
 <div class="row center-xs top-space">
-	<div class="col-xs-12 col-sm-8 col-lg-8">
+	<div class="col-xs-12 col-sm-8 col-lg-10">
 		<div class="box mdl-shadow--2dp white">
 			<div class="big-padding text-left cover relative" style="background-image: url(<%= @company.cover.url(:medium)%>)">
-				<div class="row">
+				<div class="row center-xs">
 					<div class="col-xs-6 col-sm-5 no-padding">
 						<div class="box">
 							<div class="image-container">
@@ -30,17 +30,17 @@
 	</div>
 </div>
 <div class="row center-xs top-space">
-	<div class="col-xs-12 col-sm-8 col-lg-8">
+	<div class="col-xs-12 col-sm-8 col-lg-10">
 		<div class="box white mdl-shadow--2dp">
 			<h2 class="big-font">Productos</h2>
 			<div class="row top-space">
 				<% @products.each do |product|%>
 					<div class="col-xs-12 col-sm-4">
 						<div class="box">
-							<%= image_tag product.avatar.url(:medium) %>
-							<p><%= product.name %></p>
+							<%= image_tag product.avatar.url(:medium)%>
+							<h2 class="medium-font"><%= product.name %></h2>
 							<p><%= product.price_sale %></p>
-							<p><%= product.stock %></p>
+							<p><%= product.description %></p>
 						</div>
 					</div>
 				<% end %>
