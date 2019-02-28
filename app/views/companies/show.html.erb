@@ -6,7 +6,7 @@
 					<div class="col-xs-6 col-sm-5 no-padding">
 						<div class="box">
 							<div class="image-container">
-								<%=image_tag @company.logo.url%>
+								<%=image_tag @company.logo.url(:thumb)%>
 								<h1 class="big-font"><%= @company.name%></h1>
 							</div>
 						</div>
@@ -33,12 +33,18 @@
 	<div class="col-xs-12 col-sm-8 col-lg-8">
 		<div class="box white mdl-shadow--2dp">
 			<h2 class="big-font">Productos</h2>
-			<% @products.each do |product|%>
-				<%= image_tag product.avatar.url(:medium) %>
-				<p><%= product.name %></p>
-				<p><%= product.price_sale %></p>
-				<p><%= product.stock %></p>
-			<% end %>
+			<div class="row top-space">
+				<% @products.each do |product|%>
+					<div class="col-xs-12 col-sm-4">
+						<div class="box">
+							<%= image_tag product.avatar.url(:medium) %>
+							<p><%= product.name %></p>
+							<p><%= product.price_sale %></p>
+							<p><%= product.stock %></p>
+						</div>
+					</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
