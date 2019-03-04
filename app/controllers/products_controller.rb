@@ -1,11 +1,16 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_combo_values, only:[:new, :edit]
+  before_action :set_combo_values, only:[:new, :edit, :create, :update]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if user_signed_in?
+      @products = Product.owner(current_user.store.company.id)
+      @company_id = current_user.store.company.id
+    else
+      @products = Product.all
+    end
   end
 
   # GET /products/1
@@ -19,7 +24,6 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @company = current_user.store.company.id
     @product = Product.new
   end
 
@@ -30,10 +34,10 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
-    @product.save(company_id: @company)
+    @company = current_user.store.company
+    @product = @company.products.new(product_params)
     respond_to do |format|
-      if @product.save
+      if @product.save()
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -69,6 +73,7 @@ class ProductsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_product
       @product = Product.find(params[:id])
     end

@@ -59,17 +59,8 @@ class Product < ApplicationRecord
 
   #pendiente de hacer la parte de ofertas
 
-
-  def product_description
-    self.description + ((self.brand != nil) ? '' + self.brand.name : '')
-  end
-
-  def brand_name
-    if self.brand
-      self.brand.name
-    else 
-      ''
-    end
+  def self.owner(company)
+    Product.where(company_id: company)
   end
   
 end

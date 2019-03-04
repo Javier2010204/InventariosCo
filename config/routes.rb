@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :brands
   devise_for :users
+  resources :stores
 
   get '/brands_suggestion', to: 'brands_suggestion#index'
   get '/validate_suggested_brand', to: 'validate_suggested_brand#index'
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
     resources :inventories
     resources :usuarios, as: :users
     resources :units
-    resources :stores
     resources :providers
     resources :attachments, only:[:show, :new, :create, :destroy]
   end
