@@ -1,7 +1,26 @@
-<div class="row full-height center-xs">
-  <div class="col-xs-12 col-sm-10 mdl-shadow--2dp white">
-    <div class="box">
-      
+<div class="row center-xs top-space">
+  <div class="col-xs-12 col-sm-8 col-lg-10">
+    <div class="box red mdl-shadow--2dp">
+      <h1 class="big-font">Productos</h1>
+      <div class="row top-space">
+        <% @products.each do |product|%>
+          <div class="col-xs-12 col-sm-4 middle-xs">
+            <div class="box white">
+              <div style="max-height: 100%; max-width: 100%;">
+                <div class="image-container">
+                  <%= image_tag product.avatar.url(:medium)%>
+                </div>
+                <div>
+                  <h2 class="medium-font"><%= product.name %></h2>
+                  <p><%= product.price_sale %></p>
+                  <p><%= product.description.first(30) %></p>
+                  <p><%= product.stock %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
