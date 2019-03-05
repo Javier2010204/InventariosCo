@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, except:[:show,:index]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_combo_values, only:[:new, :edit, :create, :update]
 
@@ -8,6 +9,7 @@ class ProductsController < ApplicationController
     if user_signed_in?
       @products = Product.own(current_user.store.company.id)
       @company_id = current_user.store.company.id
+      render :admin_products
     else
       @products = Product.all
     end
