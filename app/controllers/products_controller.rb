@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if user_signed_in?
-      @products = Product.owner(current_user.store.company.id)
+      @products = Product.own(current_user.store.company.id)
       @company_id = current_user.store.company.id
     else
       @products = Product.all

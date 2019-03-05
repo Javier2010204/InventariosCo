@@ -59,7 +59,7 @@ class Product < ApplicationRecord
 
   #pendiente de hacer la parte de ofertas
 
-  def self.owner(company)
+  def self.own(company)
     Product.where(company_id: company)
   end
   
