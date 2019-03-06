@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   end
 
   def unregistered
+  	@products = Product.all
   end
 end
