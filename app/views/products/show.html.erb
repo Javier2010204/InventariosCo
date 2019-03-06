@@ -34,9 +34,13 @@
 </div>
 <div class="row center-xs top-space">
 	<div class="col-xs-12 col-sm-8">
-		<div class="box mdl-shadow--2dp white">
+		<div class="box">
 			<% @product.attachments.each do |attachment|%>
-            	<%= image_tag attachment.archivo.url%>        
+				<div id="lightgallery">
+					<a href="<%= attachment.archivo.url %>">
+						<%= image_tag attachment.archivo.url%> 
+					</a> 
+				</div>      
 			<%end%>
 		</div>
 	</div>

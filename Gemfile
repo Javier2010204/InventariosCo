@@ -35,6 +35,7 @@ gem 'bower-rails'
 gem 'jquery-rails'
 gem 'annotate'
 gem 'aasm'
+gem 'light_gallery_rails', git: 'https://github.com/JoJoS003/light-gallery-rails.git'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
