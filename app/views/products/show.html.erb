@@ -35,7 +35,9 @@
 <div class="row center-xs top-space">
 	<div class="col-xs-12 col-sm-8">
 		<div class="box mdl-shadow--2dp white">
-			Imagenes del producto
+			<% @product.attachments.each do |attachment|%>
+            	<%= image_tag attachment.archivo.url%>        
+			<%end%>
 		</div>
 	</div>
 </div>
