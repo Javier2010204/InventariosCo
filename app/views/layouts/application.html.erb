@@ -15,9 +15,7 @@
 
   <body>
     <div class="mdl-layout mdl-js-layout">
-      <% if user_signed_in? %>
-        <%= render 'partials/nav' %>
-      <% end %>
+      <%= render 'partials/nav' %>
       <p style="<%= 'display:none;' if notice.nil? && alert.nil? %>">
         <%= notice %>
         <%= alert  %>

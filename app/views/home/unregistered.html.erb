@@ -1,22 +1,29 @@
+<div class="row center-xs big-padding dark-blue white-text">
+  <div class="col-xs-12 col-sm-12">
+    <div class="box">
+      <h1 class="big-font no-margin">Bienvenido a NombreAqui</h1>
+      <p>Busca productos y ve la disponibilidad en las diferentes tiendas</p>
+    </div>
+  </div>
+</div>
+
 <div class="row center-xs top-space">
   <div class="col-xs-12 col-sm-8 col-lg-10">
     <div class="box">
-      <h1 class="big-font">Productos</h1>
       <div class="row top-space">
         <% @products.each do |product|%>
-          <div class="col-xs-12 col-sm-4 middle-xs">
+          <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 middle-xs top-space">
             <div class="box">
               <div class="demo-card-square mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-card--expand" style="background-image: url(<%=product.avatar.url(:medium)%>); background-position: center; background-size: cover;">
                 </div>
               <div class="mdl-card__supporting-text">
-                <h2 class="mdl-card__title-text black-text" ><%= product.name%></h2>
+                <h2 class="mdl-card__title-text black-text"><%= product.name%><strong></strong></h2>
+                <h4 class="no-margin">Q.<%= product.price_sale%></h4>
                 <%= product.description%>
               </div>
               <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  detalles
-                </a>
+                <%= link_to 'Ver Detalles', product, class:"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"%>
               </div>
             </div>
             </div>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :brands
   devise_for :users
   resources :stores
+  resources :companies
 
   get '/brands_suggestion', to: 'brands_suggestion#index'
   get '/validate_suggested_brand', to: 'validate_suggested_brand#index'
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   authenticated :user do
     root 'home#index'
     resources :rols
-    resources :companies
     resources :inventories
     resources :usuarios, as: :users
     resources :units
