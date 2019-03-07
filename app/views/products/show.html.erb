@@ -24,7 +24,7 @@
 				<div class="row center-xs">
 					<div class="col-xs-10">
 						<div class="box">
-							<p><%= @product.description %></p>
+							<p class="top-space text-justify"><%= @product.description %></p>
 						</div>
 					</div>
 				</div>
@@ -35,13 +35,7 @@
 <div class="row center-xs top-space">
 	<div class="col-xs-12 col-sm-8">
 		<div class="box">
-			<% @product.attachments.each do |attachment|%>
-				<div id="lightgallery">
-					<a href="<%= attachment.archivo.url %>">
-						<%= image_tag attachment.archivo.url%> 
-					</a> 
-				</div>      
-			<%end%>
+			imagenes
 		</div>
 	</div>
 </div>

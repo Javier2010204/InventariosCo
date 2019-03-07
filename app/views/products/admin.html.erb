@@ -74,25 +74,27 @@
         				</div>
     				</div>
 				</div>
-                <div>
-                    <h3 class="medium-font">Imagenes</h3>
-                    <ol>
-                        <% @product.attachments.each do |attachment|%>
-                            <li class="large-padding medium-font grey">
-                                <%= attachment.archivo_file_name%>
-                                <%= link_to attachment, method: :delete, :"data-confirm" => 'estas seguro de elimiar el archivo?', class: 'red-text' do %>
-                                    <i class="material-icons">delete_forever</i>
-                                <%end%>
-                            </li>
-                        <%end%>
-                    </ol>
-                    <%= render 'attachments/form', product_id: @product.id %>
-                </div>
 			</div>
 		</div>
 	</div>
 </div>
-<%=link_to "Ver como cliente", product_path(id: @product.id, client: true), class: 'no-decoration'%>
-
-<%= current_user.store.company.id %>
-<%= @product.company.id %>
+<div class="row center-xs">
+    <div class="col-xs-12 col-lg-8 mdl-shadow--2dp white circle-border">
+        <div class="box">
+        <div>
+            <h2 class="">Imagenes</h2>
+                <ol>
+                    <% @product.attachments.each do |attachment|%>
+                        <li class="large-padding medium-font grey">
+                            <%= attachment.archivo_file_name%>
+                            <%= link_to attachment, method: :delete, :"data-confirm" => 'estas seguro de elimiar el archivo?', class: 'red-text' do %>
+                                <i class="material-icons">delete_forever</i>
+                            <%end%>
+                        </li>
+                    <%end%>
+                </ol>
+                <%= render 'attachments/form', product_id: @product.id %>
+            </div>
+        </div>  
+    </div>
+</div>
