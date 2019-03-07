@@ -154,4 +154,20 @@ html,body{
   color: #fff;
   background: #46B6AC;
 }
+.slider{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.slide ul li{
+    list-style: none;
+    float: left;
+}
+.slide ul li img{
+    width: 500px;
+    height: 500px;
+}
+
 

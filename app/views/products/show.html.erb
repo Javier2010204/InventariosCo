@@ -32,11 +32,22 @@
 		</div>
 	</div>
 </div>
-<div class="row center-xs top-space">
-	<div class="col-xs-12 col-sm-8">
-		<div class="box">
-			imagenes
+<div id="gallery">
+		<div class="slider">
+			<ul>
+			<% @product.attachments.each do |attachment|%>	
+				<li>
+					<%= image_tag attachment.archivo.url, id:"#{attachment.id}" %>
+				</li>
+			<% end %>
+			</ul>
 		</div>
-	</div>
+		<div>
+			<% @product.attachments.each do |attachment|%>	
+				<li>
+					<a href="#<%=attachment.id%>"><%= attachment.archivo_file_name %></a>
+				</li>
+			<% end %>
+		</div>
 </div>
 
