@@ -154,20 +154,33 @@ html,body{
   color: #fff;
   background: #46B6AC;
 }
-.slider{
-    width: 500px;
-    height: 500px;
-    border: 1px solid black;
-    overflow-x: scroll;
-    overflow-y: hidden;
-}
-.slide ul li{
-    list-style: none;
-    float: left;
-}
-.slide ul li img{
-    width: 500px;
-    height: 500px;
-}
 
+
+#galeria{
+    border: 1px solid #EAEAEA;
+    border-radius: 25px;
+    padding: 20px;
+    padding-bottom: 0;
+    background: #0099cc;
+    width: 940px;
+    margin: auto;
+}
+#imgMostrar{
+    border: 1px solid #F2F2F2;
+    border-radius: 25px;
+    width: 940px;
+    height: 300px;
+}
+#galeria_miniaturas{
+    display: table;
+    margin: 0px auto;
+}
+.miniatura{
+    width: 100px;
+    border-radius: 10px;
+    float: left;
+    cursor: pointer;
+    padding: 5px;
+    margin :10px 5px;
+}
 

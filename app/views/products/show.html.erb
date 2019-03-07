@@ -32,22 +32,14 @@
 		</div>
 	</div>
 </div>
-<div id="gallery">
-		<div class="slider">
-			<ul>
-			<% @product.attachments.each do |attachment|%>	
-				<li>
-					<%= image_tag attachment.archivo.url, id:"#{attachment.id}" %>
-				</li>
-			<% end %>
-			</ul>
-		</div>
-		<div>
-			<% @product.attachments.each do |attachment|%>	
-				<li>
-					<a href="#<%=attachment.id%>"><%= attachment.archivo_file_name %></a>
-				</li>
-			<% end %>
-		</div>
+<div id="galeria">
+	<div id="galeria_base">
+		<%= image_tag @product.avatar.url, id:'imgMostrar'%>
+	</div>
+	<div id="galeria_miniaturas">
+		<% @product.attachments.each do |attachment| %>
+			<%= image_tag attachment.archivo.url, class: 'miniatura', onclick:"document.getElementById('imgMostrar').src='#{attachment.archivo.url}'"%>
+		<% end %>
+	</div>
 </div>
 
