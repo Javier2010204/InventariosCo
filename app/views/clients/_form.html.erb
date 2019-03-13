@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= form.text_field 'Nombre', class: 'mdl-textfield__input' %>
+    <%= form.label :name, class: 'mdl-textfield__label' %>
   </div>
 
-  <div class="mdl-textfield mdl-js-textfield">
-    <%= form.label :phone %>
-    <%= form.number_field :phone %>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= form.number_field 'Telefono', class: 'mdl-textfield__input' %>
+    <%= form.label :phone, class: 'mdl-textfield__label' %>
   </div>
 
-  <div class="actions">
+  <div class="text-left container">
     <%= form.submit 'Guardar', class: 'mdl-button mdl-js-button mdl-button--raised' %>
   </div>
 <% end %>
