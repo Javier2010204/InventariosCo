@@ -23,6 +23,7 @@
 class Company < ApplicationRecord
     has_many :stores
     has_many :products
+    has_many :clients
 
     validates :name, presence: true
 
