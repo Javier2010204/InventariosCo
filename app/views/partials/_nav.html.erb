@@ -9,7 +9,7 @@
               <%= link_to 'Link', root_path, class: 'white-text mdl-navigation__link' %>
               <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete, class: 'white-text mdl-navigation__link' %>
             <% else %>
-               <%= link_to 'Iniciar Sesion', new_user_session_path, class: 'mdl-button mdl-js-button mdl-button--raised white-text' %> 
+               <%= link_to 'Iniciar Sesion', new_user_session_path, class: 'mdl-button mdl-js-button mdl-button--raised white-text' %>
             <% end %>
         </nav>
     </div>
@@ -24,6 +24,7 @@
             <%= link_to 'Mis Productos', products_path, class: "mdl-navigation__link" %>
             <%= link_to 'Sucursales', stores_path, class: "mdl-navigation__link"%>
             <%= link_to 'Inventario', inventories_path, class: "mdl-navigation__link"%>
+            <%= link_to 'Clientes', clients_path, class: "mdl-navigation__link"%>
             <%= link_to 'Mi empresa', current_user.store.company, class: "mdl-navigation__link"%>
         <% else %>
 
