@@ -1,5 +1,6 @@
 class SalesController < ApplicationController
   before_action :set_sale, only: [:show, :edit, :update, :destroy]
+  before_action :set_combo_values, only: [:new, :create]
 
   # GET /sales
   # GET /sales.json
@@ -17,9 +18,10 @@ class SalesController < ApplicationController
 
   # GET /sales/new
   def new
+    @client = Client.first
     last_sale = Sale.where(state: "confirmed", user: current_user).maximum('number')
     number = (last_sale != nil) ? last_sale + 1 : 1
-    @sale = Sale.create(date: Date::current, number: number, state: "draft", user:current_user, company: current_user.store.company)
+    @sale = Sale.create(date: Date::current, number: number, state: "draft", user:current_user, company: current_user.store.company, client_id: 1)
     @sale.sale_details.build
     params[:sale_id] = @sale.id.to_s
   end
@@ -72,6 +74,11 @@ class SalesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_sale
       @sale = Sale.find(params[:id])
+    end
+
+    def set_combo_values
+        @clients = Client.all.order(:name)
+        @products = Product.all.order(:name)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

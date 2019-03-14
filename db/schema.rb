@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_142346) do
   create_table "sales", force: :cascade do |t|
     t.integer "number"
     t.integer "state"
+    t.date "date"
     t.bigint "client_id"
     t.bigint "company_id"
     t.bigint "user_id"

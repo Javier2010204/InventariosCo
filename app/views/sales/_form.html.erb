@@ -12,31 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :number %>
+    <%= form.label :number, "Numero" %>
     <%= form.number_field :number %>
   </div>
 
   <div class="field">
-    <%= form.label :state %>
-    <%= form.number_field :state %>
-  </div>
-
-  <div class="field">
     <%= form.label :client_id %>
-    <%= form.text_field :client_id %>
+    <%= form.collection_select :client_id, @clients,:id,:name, include_blank: false %>
   </div>
 
   <div class="field">
-    <%= form.label :company_id %>
-    <%= form.text_field :company_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <p>empresa</p>
+    <p>usuario</p>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= link_to 'Agregar detalle', new_sale_sale_detail_path(sale_id: @sale.id) %>
+
+
+<div class="">
+    <h4>TABLA</h4>
+    <%= (@sale.sale_details.count > 0) ? render(partial: 'table', locals: {sale: @sale, show_actions: true}) : 'No hay detalles cargados' %>
+</div>

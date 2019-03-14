@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  
-  resources :sale_details
-  resources :sales
+
+  resources :sales do
+      resources :sale_details
+  end
   resources :clients
   resources :products
   resources :sub_categories

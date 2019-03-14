@@ -26,6 +26,7 @@
             <%= link_to 'Inventario', inventories_path, class: "mdl-navigation__link"%>
             <%= link_to 'Clientes', clients_path, class: "mdl-navigation__link"%>
             <%= link_to 'Mi empresa', current_user.store.company, class: "mdl-navigation__link"%>
+            <%= link_to 'Nueva Ventas', new_sale_path, class: "mdl-navigation__link"%>
         <% else %>
 
         <% end %>

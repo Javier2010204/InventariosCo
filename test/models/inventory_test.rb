@@ -8,6 +8,7 @@
 #  stock      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  min_stock  :integer
 #
 
 require 'test_helper'

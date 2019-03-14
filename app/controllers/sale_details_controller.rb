@@ -1,5 +1,6 @@
 class SaleDetailsController < ApplicationController
   before_action :set_sale, only:[:new, :create, :destroy]
+  before_action :set_combo_values, only:[:new, :create]
 
   # GET /sale_details
   # GET /sale_details.json
@@ -15,7 +16,7 @@ class SaleDetailsController < ApplicationController
   # GET /sale_details/new
   def new
     @sale_detail = @sale.sale_details.build
-    @sale_details.product = Product.first
+    @sale_details.product = Product.first.id
   end
 
   # GET /sale_details/1/edit
@@ -27,13 +28,30 @@ class SaleDetailsController < ApplicationController
   def create
     product_exists = false
     product_id = params[:sale_details][:product_id].to_i
+
     @sale.sale_details.each do |detail|
         if detail.product_id == product_id
             product_exists = true
             @sale_detail = detail
             @save_sale_detail = detail.id
+            break
         end
     end
+
+    if product_exists
+        @sale_detail.qty += params[:sale_details][:qty].to_i
+        @sale_detail.price = params[:sale_details][:price].to_f
+        @sale_detail.save!
+    else
+        sale_detail = SaleDetail.new(sale_details_params)
+        if @sale.sale_details.last.nil?
+            sale_detail.number = 1
+        else
+            sale_detail.number = @sale.sale_details.last.number + 1
+        end
+        @sale.sale_details << sale_detail
+    end
+    @sale.save!
   end
 
   # PATCH/PUT /sale_details/1
@@ -64,6 +82,11 @@ class SaleDetailsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_sale
       @sale = Sale.find(params[:sale_id].to_i)
+    end
+
+    def set_combo_values
+      @clients = Client.all.order(:name)
+      @product = Product.all.order(:name)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

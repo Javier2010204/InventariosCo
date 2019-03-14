@@ -25,7 +25,7 @@
 #  provider_id         :bigint(8)
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
-#  company_id          :bigint(8)        default(1)
+#  company_id          :bigint(8)
 #
 
 class Product < ApplicationRecord
@@ -62,5 +62,5 @@ class Product < ApplicationRecord
   def self.own(company)
     Product.where(company_id: company)
   end
-  
+
 end
