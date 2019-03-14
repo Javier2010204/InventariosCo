@@ -22,4 +22,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :rol
   belongs_to :store
+
+  has_many :sales
 end
