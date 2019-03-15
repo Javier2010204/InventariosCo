@@ -11,9 +11,16 @@
     </div>
   <% end %>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">
-    <%= form.label 'Nombre del producto', class: 'mdl-textfield__label' %>
-    <%= form.text_field :name, class: 'mdl-textfield__input' %>
+  <div class="form-group row">
+    <%= form.label 'Nombre del producto', class: 'bmd-label-floating'%>
+    <%= form.text_field :name, class: 'form-control', id:'exampleInputEmail1', placeholder:'Escribe aqui' %>
+    <small id="emailHelp" class="bmd-label">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="bmd-form-group">
+    <%= form.label 'Nombre del producto', class: 'floating-label' %>
+    <%= form.text_field :name, class: 'form-control floating-label' %>
+    <span class="bmd-help">Escribe una descripcion del producto.</span>
   </div>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label container">

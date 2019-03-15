@@ -35,6 +35,7 @@ gem 'bower-rails'
 gem 'jquery-rails'
 gem 'annotate'
 gem 'aasm'
+gem 'bootstrap-material-design'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

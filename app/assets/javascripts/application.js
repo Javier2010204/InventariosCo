@@ -13,8 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require activestorage
+//= require main
 //= require turbolinks
 //= require 'typeahead.js.js'
 //= require_tree .
-
-

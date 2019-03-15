@@ -8,9 +8,10 @@
             <p>Control total de tu negocio y comunicación con tus clientes</p>
           </div>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'mdl-textfield__input' %>
-              <%= f.label :email, class: 'mdl-textfield__label' %>
+
+            <div class="form-group">
+            <%= f.label :email, class: 'bmd-label-floating' %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
