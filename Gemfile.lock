@@ -243,6 +243,7 @@ DEPENDENCIES
   annotate
   bootsnap (>= 1.1.0)
   bootstrap-material-design
+  bootstrap-sass
   bower-rails
   byebug
   capybara (>= 2.15)
