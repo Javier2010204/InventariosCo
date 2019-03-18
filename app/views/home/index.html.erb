@@ -1,12 +1,5 @@
-<div class="row center-xs large-padding top-space">
-    <div class="col-xs-8 col-lg-10">
-        <div class="box white mdl-shadow--2dp">
-            <h1>Bienvenido al dashboard</h1>
-            <p><%= current_user.email %></p>
-            <p><%= current_user.rol_id %></p>
-            <p><%= current_user.rol.name %></p>
-            <p><%= current_user.store.company.name%> <%= current_user.store.name %></p>
-        </div>
-    </div>
-</div>
-
+<h1>Bienvenido al dashboard</h1>
+<p><%= current_user.email %></p>
+<p><%= current_user.rol_id %></p>
+<p><%= current_user.rol.name %></p>
+<p><%= current_user.store.company.name%> <%= current_user.store.name %></p>
