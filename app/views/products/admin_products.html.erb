@@ -25,19 +25,17 @@
               <td><%= product.price_cost %></td>
               <td><%= product.stock %></td>
               <td>
-                
+
               </td>
             </tr>
           <% end %>
         </tbody>
-      </table>   
+      </table>
     </div>
   </div>
 </div>
 <div class="btn-floating">
-  <%= button_to new_product_url(), method: :get, class: "mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect" do %>
+  <%= button_to new_product_url(), method: :get, class: "btn btn-float btn-primary my-1" do %>
     <i class="material-icons">add</i>
   <% end %>
 </div>
-
-

@@ -12,9 +12,11 @@
   <% end %>
 
   <div class="form-group row">
-    <%= form.label 'Nombre del producto', class: 'bmd-label-floating'%>
-    <%= form.text_field :name, class: 'form-control', id:'exampleInputEmail1', placeholder:'Escribe aqui' %>
-    <small id="emailHelp" class="bmd-label">We'll never share your email with anyone else.</small>
+    <div class="floating-label">
+        <%= form.label 'Nombre del producto', class: 'bmd-label-floating'%>
+        <%= form.text_field :name, class: 'form-control', id:'exampleInputEmail1', placeholder:'Escribe aqui' %>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
   </div>
 
   <div class="bmd-form-group">
