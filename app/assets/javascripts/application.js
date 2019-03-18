@@ -12,9 +12,9 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require bootstrap
-//= require bootstrap-material-design
 //= require activestorage
 //= require turbolinks
-//= require 'typeahead.js.js'
+//= require bootstrap
+//= require bootstrap-material-design
+//= require main
 //= require_tree .
