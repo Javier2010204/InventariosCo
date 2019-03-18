@@ -1,74 +1,43 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">ChimpUp</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <%= link_to 'Chimp Up', root_path, class: 'navbar-brand'%>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <% if user_signed_in? %>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Mas opciones
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <%= link_to 'Sucursales', stores_path, class: "dropdown-item"%>
+                            <%= link_to 'Inventario', inventories_path, class: "dropdown-item"%>
+                            <%= link_to 'Mi empresa', current_user.store.company, class: "dropdown-item"%>
+                            <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                            <%= link_to 'Nueva Ventas', new_sale_path, class: "dropdown-item"%>
+                            <div class="dropdown-divider"></div>
+                            <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                        </div>
+                    </li>
+                    <li>
+                        <%= link_to 'Mis Productos', products_path, class: "nav-link" %>
+                    </li>
+                <% else %>
+                    <li class="nav-item">
+                        <%= link_to 'Iniciar Sesion', new_user_session_path, class: 'nav-link' %>
+                    </li>
+                <% end %>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-</header>
-
-
-
-<header class="mdl-layout__header mdl-layout__header--scroll">
-    <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">
-            <%= link_to 'InventariosCo', root_path, class: 'white-text no-margin no-decoration' %>
-        </span>
-        <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation">
-            <% if user_signed_in? %>
-              <%= link_to 'Link', root_path, class: 'white-text mdl-navigation__link' %>
-              <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete, class: 'white-text mdl-navigation__link' %>
-            <% else %>
-               <%= link_to 'Iniciar Sesion', new_user_session_path, class: 'mdl-button mdl-js-button mdl-button--raised white-text' %>
-            <% end %>
-        </nav>
-    </div>
-</header>
-<div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">
-        Inventarios Co
-    </span>
-    <nav class="mdl-navigation">
-        <%= link_to 'Inicio', root_path, class: "mdl-navigation__link" %>
-        <% if user_signed_in? %>
-            <%= link_to 'Mis Productos', products_path, class: "mdl-navigation__link" %>
-            <%= link_to 'Sucursales', stores_path, class: "mdl-navigation__link"%>
-            <%= link_to 'Inventario', inventories_path, class: "mdl-navigation__link"%>
-            <%= link_to 'Clientes', clients_path, class: "mdl-navigation__link"%>
-            <%= link_to 'Mi empresa', current_user.store.company, class: "mdl-navigation__link"%>
-            <%= link_to 'Nueva Ventas', new_sale_path, class: "mdl-navigation__link"%>
-        <% else %>
-
-        <% end %>
     </nav>
-</div>
+</header>
